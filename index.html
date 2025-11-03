@@ -4,18 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Vignesh — Digital & AI Enablement</title>
-  <meta name="description" content="Portfolio of applied AI and digital platform work: RAG Bot, Summarizer, AI Agent Orchestrator." />
+  <meta name="description" content="Portfolio of applied AI and digital platform work: RAG Bot, AI Text Summarizer, AI Agent Orchestrator." />
   <!-- Tailwind CDN (no build) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Subtle card hover */
     .card { transition: transform .2s ease, box-shadow .2s ease; }
     .card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
-    /* Brand accents */
     :root { --brand:#0f766e; } /* teal-700 */
     .brand { color: var(--brand); }
     .brand-bg { background: var(--brand); }
     .brand-border { border-color: var(--brand); }
+    .tag { padding:.25rem .5rem; background:#f1f5f9; border-radius:.4rem; font-size:.72rem; color:#475569; }
+    .link-btn{ padding:.35rem .6rem; border:1px solid #e2e8f0; border-radius:.5rem; background:#fff }
+    .link-btn:hover{ background:#f8fafc }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -26,70 +27,85 @@
         <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Vignesh</h1>
         <p class="mt-1 text-slate-600">Digital Transformation & <span class="brand font-medium">AI Enablement</span></p>
       </div>
-      <nav class="flex items-center gap-4 text-sm">
-        <a class="px-3 py-2 rounded-lg bg-white border border-slate-200 hover:bg-slate-100" href="mailto:you@cibc.com">Email</a>
-        <a class="px-3 py-2 rounded-lg bg-white border border-slate-200 hover:bg-slate-100" href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="px-3 py-2 rounded-lg bg-white border border-slate-200 hover:bg-slate-100" href="https://github.com/yourhandle" target="_blank" rel="noopener">GitHub</a>
+      <nav class="flex items-center gap-3 text-sm">
+        <a class="link-btn" href="mailto:you@cibc.com">Email</a>
+        <a class="link-btn" href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="link-btn" href="https://github.com/yourhandle" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </div>
     <p class="mt-6 max-w-3xl text-slate-700">
-      Director-track <strong>strategic technologist</strong> connecting technical strategy with business transformation. 
-      I design and ship applied AI services and modern digital platforms.
+      Director-track <strong>strategic technologist</strong> connecting technical strategy with business transformation.
+      I design and ship applied AI services and modern digital platforms across <em>RAG, summarization, and agentic orchestration</em>.
     </p>
   </header>
 
   <!-- Tiles -->
-  <main class="max-w-6xl mx-auto px-6 pb-16">
-    <section>
-      <h2 class="sr-only">Featured Projects</h2>
+  <main class="max-w-6xl mx-auto px-6 pb-20">
+    <section aria-labelledby="featured">
+      <h2 id="featured" class="sr-only">Featured Projects</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Tile 1 -->
-        <a class="card block bg-white border border-slate-200 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-           href="https://github.com/yourhandle/rag-bot" target="_blank" rel="noopener" aria-label="RAG Knowledge Assistant">
+
+        <!-- Tile 1: RAG -->
+        <div class="card bg-white border border-slate-200 rounded-2xl p-5">
           <div class="flex items-center gap-3">
             <div class="brand-bg text-white w-10 h-10 rounded-lg grid place-items-center font-semibold">R</div>
             <h3 class="text-lg font-semibold">RAG Knowledge Assistant</h3>
           </div>
-          <p class="mt-3 text-sm text-slate-600">Grounds answers in enterprise documents using vector search + LLM. Includes source citations and provider swap (OpenAI/Azure/Ollama).</p>
-          <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
-            <span class="px-2 py-1 bg-slate-100 rounded">FastAPI</span>
-            <span class="px-2 py-1 bg-slate-100 rounded">Chroma/FAISS</span>
-            <span class="px-2 py-1 bg-slate-100 rounded">LangChain</span>
-            <span class="px-2 py-1 bg-slate-100 rounded">LLM</span>
+          <p class="mt-3 text-sm text-slate-600">
+            Answers questions using your own documents via vector search + LLM. Grounded responses with citations; swap providers (OpenAI/Azure/Ollama).
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">FastAPI</span><span class="tag">Chroma/FAISS</span><span class="tag">LangChain</span><span class="tag">LLM</span>
           </div>
-        </a>
+          <div class="mt-4 flex items-center gap-3 text-sm">
+            <a class="link-btn" href="#rag-details">Details</a>
+            <a class="link-btn" href="https://github.com/yourhandle/rag-bot" target="_blank" rel="noopener">Repo</a>
+            <!-- Optional live app/docs -->
+            <!-- <a class="link-btn" href="https://your-live-rag-app" target="_blank" rel="noopener">Live</a> -->
+            <!-- <a class="link-btn" href="https://your-rag-api/docs" target="_blank" rel="noopener">API Docs</a> -->
+          </div>
+        </div>
 
-        <!-- Tile 2 -->
-        <a class="card block bg-white border border-slate-200 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-           href="https://github.com/yourhandle/ai-text-service" target="_blank" rel="noopener" aria-label="AI Text Summarization API">
+        <!-- Tile 2: Summarizer -->
+        <div class="card bg-white border border-slate-200 rounded-2xl p-5">
           <div class="flex items-center gap-3">
             <div class="brand-bg text-white w-10 h-10 rounded-lg grid place-items-center font-semibold">S</div>
-            <h3 class="text-lg font-semibold">AI Text Summarization API</h3>
+            <h3 class="text-lg font-semibold">AI Text Summarization Service</h3>
           </div>
-          <p class="mt-3 text-sm text-slate-600">Exec-ready summaries with length control. FastAPI backend, Streamlit UI, and Vue option; switch between OpenAI, Azure, and Ollama.</p>
-          <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
-            <span class="px-2 py-1 bg-slate-100 rounded">FastAPI</span>
-            <span class="px-2 py-1 bg-slate-100 rounded">OpenAI/Azure/Ollama</span>
-            <span class="px-2 py-1 bg-slate-100 rounded">Streamlit/Vue</span>
+          <p class="mt-3 text-sm text-slate-600">
+            Executive-ready summaries with length control. FastAPI backend + Streamlit/Vue UI. Provider-agnostic (OpenAI/Azure/Ollama).
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">FastAPI</span><span class="tag">Streamlit/Vue</span><span class="tag">OpenAI/Azure/Ollama</span>
           </div>
-        </a>
+          <div class="mt-4 flex items-center gap-3 text-sm">
+            <a class="link-btn" href="#sum-details">Details</a>
+            <a class="link-btn" href="https://github.com/yourhandle/ai-text-service" target="_blank" rel="noopener">Repo</a>
+            <!-- <a class="link-btn" href="https://your-summarizer-live" target="_blank" rel="noopener">Live</a> -->
+            <!-- <a class="link-btn" href="https://your-summarizer-api/docs" target="_blank" rel="noopener">API Docs</a> -->
+          </div>
+        </div>
 
-        <!-- Tile 3 -->
-        <a class="card block bg-white border border-slate-200 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-           href="https://github.com/yourhandle/ai-agent-orchestrator" target="_blank" rel="noopener" aria-label="AI Agent Orchestrator">
+        <!-- Tile 3: Orchestrator -->
+        <div class="card bg-white border border-slate-200 rounded-2xl p-5">
           <div class="flex items-center gap-3">
             <div class="brand-bg text-white w-10 h-10 rounded-lg grid place-items-center font-semibold">A</div>
             <h3 class="text-lg font-semibold">AI Agent Orchestrator (Phase 1)</h3>
           </div>
-          <p class="mt-3 text-sm text-slate-600">Routes requests to specialized agents (summarize, classify, keywords). Pluggable provider abstraction and lightweight Vue UI.</p>
-          <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
-            <span class="px-2 py-1 bg-slate-100 rounded">Agentic</span>
-            <span class="px-2 py-1 bg-slate-100 rounded">FastAPI</span>
-            <span class="px-2 py-1 bg-slate-100 rounded">Vue</span>
+          <p class="mt-3 text-sm text-slate-600">
+            Routes requests to specialized agents (summarize, classify, keywords). Pluggable provider abstraction and lightweight Vue UI.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">Agentic</span><span class="tag">FastAPI</span><span class="tag">Vue</span><span class="tag">LLM Routing</span>
           </div>
-        </a>
+          <div class="mt-4 flex items-center gap-3 text-sm">
+            <a class="link-btn" href="#agent-details">Details</a>
+            <a class="link-btn" href="https://github.com/yourhandle/ai-agent-orchestrator" target="_blank" rel="noopener">Repo</a>
+            <!-- <a class="link-btn" href="https://your-agents-live" target="_blank" rel="noopener">Live</a> -->
+          </div>
+        </div>
 
-        <!-- (Optional) Tile 4: Guest Lecture -->
+        <!-- Optional Tile: Talk -->
         <a class="card block bg-white border border-slate-200 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-emerald-500"
            href="assets/CWC_Timeline.pdf" target="_blank" rel="noopener" aria-label="Canadian Workplace Integration Talk">
           <div class="flex items-center gap-3">
@@ -97,44 +113,98 @@
             <h3 class="text-lg font-semibold">Canadian Workplace Integration (Talk)</h3>
           </div>
           <p class="mt-3 text-sm text-slate-600">Timeline model and real-world analogies for integrating into Canadian workplaces. Slide deck & notes.</p>
-          <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
-            <span class="px-2 py-1 bg-slate-100 rounded">Slides</span>
-            <span class="px-2 py-1 bg-slate-100 rounded">Storytelling</span>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">Slides</span><span class="tag">Storytelling</span>
           </div>
         </a>
 
-        <!-- (Optional) Tile 5: Case Study -->
-        <a class="card block bg-white border border-slate-200 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-           href="projects.html" aria-label="Project Case Studies">
+        <!-- Optional Tile: Case Studies -->
+        <a class="card block bg-white border border-slate-200 rounded-2xl p-5"
+           href="#details" aria-label="Project Case Studies">
           <div class="flex items-center gap-3">
             <div class="brand-bg text-white w-10 h-10 rounded-lg grid place-items-center font-semibold">P</div>
             <h3 class="text-lg font-semibold">Project Case Studies</h3>
           </div>
           <p class="mt-3 text-sm text-slate-600">Deeper dives: problem → approach → architecture → outcomes. Short and business-focused.</p>
-          <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
-            <span class="px-2 py-1 bg-slate-100 rounded">Impact</span>
-            <span class="px-2 py-1 bg-slate-100 rounded">Architecture</span>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">Impact</span><span class="tag">Architecture</span>
           </div>
         </a>
 
-        <!-- (Optional) Tile 6: Contact -->
-        <a class="card block bg-white border border-slate-200 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        <!-- Optional Tile: Contact -->
+        <a class="card block bg-white border border-slate-200 rounded-2xl p-5"
            href="mailto:you@cibc.com" aria-label="Contact">
           <div class="flex items-center gap-3">
             <div class="brand-bg text-white w-10 h-10 rounded-lg grid place-items-center font-semibold">@</div>
             <h3 class="text-lg font-semibold">Contact</h3>
           </div>
           <p class="mt-3 text-sm text-slate-600">Open to conversations on enterprise AI, digital modernization, and strategy alignment.</p>
-          <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
-            <span class="px-2 py-1 bg-slate-100 rounded">Email</span>
-            <span class="px-2 py-1 bg-slate-100 rounded">LinkedIn</span>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="tag">Email</span><span class="tag">LinkedIn</span>
           </div>
         </a>
       </div>
     </section>
 
+    <!-- Details / Case Studies -->
+    <section id="details" class="mt-16">
+      <h2 class="text-xl font-semibold">Project Details</h2>
+      <p class="mt-2 text-slate-600">Short, business-first summaries you can skim quickly. Click “Repo” above for code.</p>
+
+      <!-- RAG Details -->
+      <article id="rag-details" class="mt-8 bg-white border border-slate-200 rounded-2xl p-6">
+        <h3 class="text-lg font-semibold">RAG Knowledge Assistant</h3>
+        <div class="mt-3 grid md:grid-cols-2 gap-6">
+          <div>
+            <p class="text-sm"><strong>What:</strong> A context-aware assistant that answers questions using internal documents with citations.</p>
+            <p class="text-sm mt-2"><strong>Why:</strong> Reduce search-to-insight time, improve trust with grounded answers, and unify knowledge silos.</p>
+            <p class="text-sm mt-2"><strong>How it’s used:</strong> Policy/FAQ lookup, internal support, research synthesis; foundation for enterprise knowledge hub.</p>
+          </div>
+          <div>
+            <p class="text-sm"><strong>Stack:</strong> FastAPI · LangChain · Chroma/FAISS · HF/OpenAI embeddings · Azure/OpenAI/Ollama LLMs · PyPDF/Unstructured.</p>
+            <p class="text-sm mt-2"><strong>AI Concepts:</strong> RAG (chunk → embed → retrieve) · vector similarity · prompt augmentation · grounded generation.</p>
+            <p class="text-sm mt-2"><strong>Learnings:</strong> Chunk/overlap tuning, embedding choice, ACL-aware retrieval, RAGAS evaluation, cost-aware provider routing.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Summarizer Details -->
+      <article id="sum-details" class="mt-8 bg-white border border-slate-200 rounded-2xl p-6">
+        <h3 class="text-lg font-semibold">AI Text Summarization Service</h3>
+        <div class="mt-3 grid md:grid-cols-2 gap-6">
+          <div>
+            <p class="text-sm"><strong>What:</strong> A microservice that converts long text into concise executive summaries with length control.</p>
+            <p class="text-sm mt-2"><strong>Why:</strong> Standardize summaries for leadership and client communications; speed up content review.</p>
+            <p class="text-sm mt-2"><strong>How it’s used:</strong> Summarize reports, transcripts, or policies; embeddable API; Streamlit/Vue UI for quick use.</p>
+          </div>
+          <div>
+            <p class="text-sm"><strong>Stack:</strong> FastAPI · Streamlit/Vue · dotenv · Azure/OpenAI/Ollama LLMs.</p>
+            <p class="text-sm mt-2"><strong>AI Concepts:</strong> Prompt design for concise output, temperature/tokens control, output formatting.</p>
+            <p class="text-sm mt-2"><strong>Learnings:</strong> Provider abstraction, deterministic prompts, token budgeting, UX for AI outputs.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Orchestrator Details -->
+      <article id="agent-details" class="mt-8 bg-white border border-slate-200 rounded-2xl p-6">
+        <h3 class="text-lg font-semibold">AI Agent Orchestrator (Phase 1)</h3>
+        <div class="mt-3 grid md:grid-cols-2 gap-6">
+          <div>
+            <p class="text-sm"><strong>What:</strong> A pluggable layer that routes tasks to specialized agents (summarize, classify, keywords).</p>
+            <p class="text-sm mt-2"><strong>Why:</strong> Evolve from single-task LLMs to composable workflows; enable reuse across products.</p>
+            <p class="text-sm mt-2"><strong>How it’s used:</strong> One API for multiple AI capabilities; path to multi-step decisioning and tool use.</p>
+          </div>
+          <div>
+            <p class="text-sm"><strong>Stack:</strong> FastAPI · LangChain (agents/tools) · Vue UI · Azure/OpenAI/Ollama provider routing.</p>
+            <p class="text-sm mt-2"><strong>AI Concepts:</strong> Agentic patterns (plan → act → reflect), tool/function calling, orchestration.</p>
+            <p class="text-sm mt-2"><strong>Learnings:</strong> Interface contracts for agents, policy-based routing, observability of agent steps.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
     <!-- Footer -->
-    <footer class="mt-12 pt-8 border-t border-slate-200 text-sm text-slate-500">
+    <footer class="mt-16 pt-8 border-t border-slate-200 text-sm text-slate-500">
       <p>© <span id="y"></span> Vignesh • Built with a simple static page on GitHub Pages.</p>
     </footer>
   </main>
