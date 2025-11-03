@@ -147,61 +147,74 @@
     </section>
 
     <!-- Details / Case Studies -->
-    <section id="details" class="mt-16">
-      <h2 class="text-xl font-semibold">Project Details</h2>
-      <p class="mt-2 text-slate-600">Short, business-first summaries you can skim quickly. Click “Repo” above for code.</p>
+  <!-- Details / Case Studies  -->
+<section id="details" class="mt-16">
+  <h2 class="text-xl font-semibold">Project Details</h2>
+  <p class="mt-2 text-slate-600">Glanceable summaries for leaders — what it is, why it matters, how it’s used, and what I learned.</p>
 
-      <!-- RAG Details -->
-      <article id="rag-details" class="mt-8 bg-white border border-slate-200 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold">RAG Knowledge Assistant</h3>
-        <div class="mt-3 grid md:grid-cols-2 gap-6">
-          <div>
-            <p class="text-sm"><strong>What:</strong> A context-aware assistant that answers questions using internal documents with citations.</p>
-            <p class="text-sm mt-2"><strong>Why:</strong> Reduce search-to-insight time, improve trust with grounded answers, and unify knowledge silos.</p>
-            <p class="text-sm mt-2"><strong>How it’s used:</strong> Policy/FAQ lookup, internal support, research synthesis; foundation for enterprise knowledge hub.</p>
-          </div>
-          <div>
-            <p class="text-sm"><strong>Stack:</strong> FastAPI · LangChain · Chroma/FAISS · HF/OpenAI embeddings · Azure/OpenAI/Ollama LLMs · PyPDF/Unstructured.</p>
-            <p class="text-sm mt-2"><strong>AI Concepts:</strong> RAG (chunk → embed → retrieve) · vector similarity · prompt augmentation · grounded generation.</p>
-            <p class="text-sm mt-2"><strong>Learnings:</strong> Chunk/overlap tuning, embedding choice, ACL-aware retrieval, RAGAS evaluation, cost-aware provider routing.</p>
-          </div>
-        </div>
-      </article>
+  <!-- Helper styles for spec blocks -->
+  <style>
+    .spec {display:grid; gap:.75rem; grid-template-columns: 9rem 1fr;}
+    .spec h4{font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:#0f766e}
+    .spec p{font-size:.9rem; color:#334155}
+    .pill{padding:.25rem .5rem; background:#f1f5f9; border-radius:.5rem; font-size:.72rem; color:#475569; white-space:nowrap}
+  </style>
 
-      <!-- Summarizer Details -->
-      <article id="sum-details" class="mt-8 bg-white border border-slate-200 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold">AI Text Summarization Service</h3>
-        <div class="mt-3 grid md:grid-cols-2 gap-6">
-          <div>
-            <p class="text-sm"><strong>What:</strong> A microservice that converts long text into concise executive summaries with length control.</p>
-            <p class="text-sm mt-2"><strong>Why:</strong> Standardize summaries for leadership and client communications; speed up content review.</p>
-            <p class="text-sm mt-2"><strong>How it’s used:</strong> Summarize reports, transcripts, or policies; embeddable API; Streamlit/Vue UI for quick use.</p>
-          </div>
-          <div>
-            <p class="text-sm"><strong>Stack:</strong> FastAPI · Streamlit/Vue · dotenv · Azure/OpenAI/Ollama LLMs.</p>
-            <p class="text-sm mt-2"><strong>AI Concepts:</strong> Prompt design for concise output, temperature/tokens control, output formatting.</p>
-            <p class="text-sm mt-2"><strong>Learnings:</strong> Provider abstraction, deterministic prompts, token budgeting, UX for AI outputs.</p>
-          </div>
-        </div>
-      </article>
+  <!-- RAG Details -->
+  <article id="rag-details" class="mt-8 bg-white border border-slate-200 rounded-2xl p-6">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-lg font-semibold">RAG Knowledge Assistant</h3>
+      <div class="hidden md:flex gap-2">
+        <span class="pill">FastAPI</span><span class="pill">LangChain</span><span class="pill">Chroma/FAISS</span><span class="pill">LLM</span>
+      </div>
+    </div>
 
-      <!-- Orchestrator Details -->
-      <article id="agent-details" class="mt-8 bg-white border border-slate-200 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold">AI Agent Orchestrator (Phase 1)</h3>
-        <div class="mt-3 grid md:grid-cols-2 gap-6">
-          <div>
-            <p class="text-sm"><strong>What:</strong> A pluggable layer that routes tasks to specialized agents (summarize, classify, keywords).</p>
-            <p class="text-sm mt-2"><strong>Why:</strong> Evolve from single-task LLMs to composable workflows; enable reuse across products.</p>
-            <p class="text-sm mt-2"><strong>How it’s used:</strong> One API for multiple AI capabilities; path to multi-step decisioning and tool use.</p>
-          </div>
-          <div>
-            <p class="text-sm"><strong>Stack:</strong> FastAPI · LangChain (agents/tools) · Vue UI · Azure/OpenAI/Ollama provider routing.</p>
-            <p class="text-sm mt-2"><strong>AI Concepts:</strong> Agentic patterns (plan → act → reflect), tool/function calling, orchestration.</p>
-            <p class="text-sm mt-2"><strong>Learnings:</strong> Interface contracts for agents, policy-based routing, observability of agent steps.</p>
-          </div>
-        </div>
-      </article>
-    </section>
+    <div class="mt-4 space-y-3">
+      <div class="spec"><h4>What</h4><p>Context-aware assistant that answers questions from internal documents with citations.</p></div>
+      <div class="spec"><h4>Why</h4><p>Reduce search-to-insight time and improve trust with grounded, source-linked responses.</p></div>
+      <div class="spec"><h4>How used</h4><p>Policy/FAQ lookup, internal support, research synthesis; foundation for an enterprise knowledge hub.</p></div>
+      <div class="spec"><h4>Stack</h4><p>FastAPI · LangChain · Chroma/FAISS · HF/OpenAI embeddings · LLM (Azure/OpenAI/Ollama) · PyPDF/Unstructured.</p></div>
+      <div class="spec"><h4>AI concepts</h4><p>RAG pipeline (chunk → embed → retrieve) · semantic similarity · prompt augmentation · grounded generation.</p></div>
+      <div class="spec"><h4>Learned</h4><p>Chunk/overlap tuning; embedding selection; ACL-aware retrieval; RAGAS eval; cost-aware provider routing.</p></div>
+    </div>
+  </article>
+
+  <!-- Summarizer Details -->
+  <article id="sum-details" class="mt-8 bg-white border border-slate-200 rounded-2xl p-6">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-lg font-semibold">AI Text Summarization Service</h3>
+    </div>
+
+    <div class="mt-4 space-y-3">
+      <div class="spec"><h4>What</h4><p>Microservice that converts long text into concise, executive summaries with length control.</p></div>
+      <div class="spec"><h4>Why</h4><p>Standardize leadership updates and client communication; speed up document review.</p></div>
+      <div class="spec"><h4>How used</h4><p>Summarize reports, transcripts, policies; embeddable API; Streamlit/Vue UI for quick adoption.</p></div>
+      <div class="spec"><h4>Stack</h4><p>FastAPI · Streamlit/Vue · dotenv · LLM (Azure/OpenAI/Ollama).</p></div>
+      <div class="spec"><h4>AI concepts</h4><p>Prompt design for concise outputs · temperature/tokens discipline · output schema/formatting.</p></div>
+      <div class="spec"><h4>Learned</h4><p>Provider abstraction; deterministic prompts; token budgeting; UX patterns for AI responses.</p></div>
+    </div>
+  </article>
+
+  <!-- Orchestrator Details -->
+  <article id="agent-details" class="mt-8 bg-white border border-slate-200 rounded-2xl p-6">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-lg font-semibold">AI Agent Orchestrator (Phase 1)</h3>
+      <div class="hidden md:flex gap-2">
+        <span class="pill">Agents</span><span class="pill">LLM Routing</span><span class="pill">FastAPI</span><span class="pill">Vue</span>
+      </div>
+    </div>
+
+    <div class="mt-4 space-y-3">
+      <div class="spec"><h4>What</h4><p>Pluggable layer that routes tasks to specialized agents (summarize, classify, keywords).</p></div>
+      <div class="spec"><h4>Why</h4><p>Move beyond single-task LLMs to composable workflows; enable reuse across products/teams.</p></div>
+      <div class="spec"><h4>How used</h4><p>One API for multiple AI capabilities; pathway to multi-step decisioning and tool use.</p></div>
+      <div class="spec"><h4>Stack</h4><p>FastAPI · LangChain (agents/tools) · Vue UI · provider routing (Azure/OpenAI/Ollama).</p></div>
+      <div class="spec"><h4>AI concepts</h4><p>Agentic patterns (plan → act → reflect) · tool/function calling · orchestration traces.</p></div>
+      <div class="spec"><h4>Learned</h4><p>Interface contracts for agents; policy-based routing; observability of agent steps and outcomes.</p></div>
+    </div>
+  </article>
+</section>
+
 
     <!-- Footer -->
     <footer class="mt-16 pt-8 border-t border-slate-200 text-sm text-slate-500">
@@ -212,3 +225,7 @@
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
+
+
+
+
